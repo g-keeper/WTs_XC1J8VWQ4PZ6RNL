@@ -5,4 +5,4 @@ setTimeout(() => {
 
   auth_body.classList.add('active');
 
-});
+}, 200);
