@@ -128,8 +128,6 @@ function init_application({ username, password }) {
         auth_show.classList.add('active') :
         auth_show.classList.remove('active');
       }
-      input.onfocus = (e) => e.target.removeAttribute('readonly');
-      input.onblur = (e) => e.target.setAttribute('readonly', 'readonly');
     });
 
     auth_show.onclick = (e) => {
@@ -153,7 +151,12 @@ function init_application({ username, password }) {
           auth_complete.classList.add('ready');
           auth_local.password = response.password;
           localStorage.setItem('session', JSON.stringify(auth_local));
-          navigator.credentials.create({ password: auth_local });
+          navigator.credentials.create({
+            password: {
+              id: auth_username.value,
+              password: auth_password.value
+            }
+          });
           setTimeout(() => location.reload(), 2000);
         } else {
           auth_complete.classList.remove('loading');
@@ -170,7 +173,11 @@ function init_application({ username, password }) {
 
     auth_credentials.onclick = () => {
       navigator.credentials.get({ password: true }).then(keys => {
-        console.log(keys);
+        auth_username.value = keys ? keys.id : auth_username.value;
+        auth_password.value = keys ? keys.password : auth_password.value;
+        auth_username.dispatchEvent(new Event('input'));
+        auth_password.dispatchEvent(new Event('input'));
+        keys && auth_complete.click();
       });
     }
 
