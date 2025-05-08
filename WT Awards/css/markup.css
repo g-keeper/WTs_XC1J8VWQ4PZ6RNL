@@ -64,6 +64,8 @@
 .screen .background:after {
   z-index: 1;
   background-color: rgba(0,0,0,0.6);
+}
+#load.screen .background:after {
   backdrop-filter: blur(10px);
 }
 
