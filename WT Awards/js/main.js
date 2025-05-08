@@ -79,7 +79,7 @@ function toggle_load(mode) {
         toggle_load(false);
       }
   
-    }, 10);
+    });
   
     load_body.classList.add('active');
     main_content.classList.remove('active');
