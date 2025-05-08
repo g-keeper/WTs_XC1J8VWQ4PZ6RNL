@@ -1,0 +1,196 @@
+:root {
+
+  /* dark */
+
+  --night-01: #FAFAFA;
+  --night-02: #242429;
+  --night-03: #202024;
+  --night-04: #1A1A1E;
+  --night-05: #121214;
+
+/*  --night-01: #FAFAFA;
+  --night-02: #101014;
+  --night-03: #0C0C0F;
+  --night-04: #07070A;
+  --night-05: #000000;*/
+
+  --night-blue-01: #4D619A;
+  --night-blue-02: #556EB4;
+  --night-blue-03: #505e87;
+  --night-blue-04: #40548c;
+
+  --night-red-01: #97353A;
+  --night-red-02: #B8363B;
+  --night-red-03: #533439;
+  --night-red-04: #74353A;
+
+  --night-green-01: #29774B;
+  --night-green-02: #268E52;
+  --night-green-03: #2C5642;
+  --night-green-04: #2B6145;
+
+  --night-yellow-01: #62622E;
+  --night-yellow-02: #72722B;
+  --night-yellow-03: #494B33;
+  --night-yellow-04: #515332;
+
+  /* light */
+
+  --light-01: #141414;
+  --light-02: #E0E0E2;
+  --light-03: #E8E8EA;
+  --light-04: #F4F4F5;
+  --light-05: #FFFFFF;
+
+  --light-blue-01: #7488C1;
+  --light-blue-02: #556EB4;
+  --light-blue-03: #4e6091;
+  --light-blue-04: #3e59a3;
+
+  --light-red-01: #D95C60;
+  --light-red-02: #D54B4F;
+  --light-red-03: #E69395;
+  --light-red-04: #DD6F72;
+
+  --light-green-01: #50A373;
+  --light-green-02: #3E9964;
+  --light-green-03: #8BC2A2;
+  --light-green-04: #64AD83;
+
+  --light-yellow-01: #B3B342;
+  --light-yellow-02: #ABAB2E;
+  --light-yellow-03: #CCCC81;
+  --light-yellow-04: #BBBB57;
+
+  /* прочие цвета */
+
+  --story-01: #34A853;
+  --story-02: #E03837;
+
+  --mark-01: #ebd932;
+  --mark-02: #ebd932;
+
+  /* оформление теней */
+
+  --sh-01: 0 0 1px rgba(0,0,0,0.4);
+  --sh-02: 0 0 2px rgba(0,0,0,0.8);
+  --sh-03: 0 0 20px rgba(0,0,0,0.4);
+  --sh-04: 0 0 4px rgba(0,0,0,0.2);
+
+  /* прочие условия */
+
+  --min-w: 1500px;
+  --min-h: 700px;
+
+  --attn-max: 5;
+
+}
+
+body.light {
+
+  --color-note: var(--light-05);
+
+  --color-01: var(--light-01);
+  --color-02: var(--light-02);
+  --color-03: var(--light-03);
+  --color-04: var(--light-04);
+  --color-05: var(--light-05);
+
+  --color-blue-01: var(--light-blue-01);
+  --color-blue-02: var(--light-blue-02);
+  --color-blue-03: var(--light-blue-03);
+  --color-blue-04: var(--light-blue-04);
+
+  --color-red-01: var(--light-red-01);
+  --color-red-02: var(--light-red-02);
+  --color-red-03: var(--light-red-03);
+  --color-red-04: var(--light-red-04);
+
+  --color-green-01: var(--light-green-01);
+  --color-green-02: var(--light-green-02);
+  --color-green-03: var(--light-green-03);
+  --color-green-04: var(--light-green-04);
+
+  --color-yellow-01: var(--light-yellow-01);
+  --color-yellow-02: var(--light-yellow-02);
+  --color-yellow-03: var(--light-yellow-03);
+  --color-yellow-04: var(--light-yellow-04);
+  
+}
+
+body.night {
+
+  --color-note: var(--night-03);
+
+  --color-01: var(--night-01);
+  --color-02: var(--night-02);
+  --color-03: var(--night-03);
+  --color-04: var(--night-04);
+  --color-05: var(--night-05);
+
+  --color-blue-01: var(--night-blue-01);
+  --color-blue-02: var(--night-blue-02);
+  --color-blue-03: var(--night-blue-03);
+  --color-blue-04: var(--night-blue-04);
+
+  --color-red-01: var(--night-red-01);
+  --color-red-02: var(--night-red-02);
+  --color-red-03: var(--night-red-03);
+  --color-red-04: var(--night-red-04);
+
+  --color-green-01: var(--night-green-01);
+  --color-green-02: var(--night-green-02);
+  --color-green-03: var(--night-green-03);
+  --color-green-04: var(--night-green-04);
+
+  --color-yellow-01: var(--night-yellow-01);
+  --color-yellow-02: var(--night-yellow-02);
+  --color-yellow-03: var(--night-yellow-03);
+  --color-yellow-04: var(--night-yellow-04);
+
+}
+
+/* elements */
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+body {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  min-width: 1500px;
+  min-height: 700px;
+  overflow: hidden;
+  background-color: var(--color-05);
+  font-family: gg sans bold, arial;
+  user-select: none;
+}
+
+/* fonts */
+
+@font-face {
+    font-family: 'gg sans regular';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/gg_sans.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'gg sans bold';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/gg_sans_bold.woff2') format('woff2');
+}
+
+@keyframes just-rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

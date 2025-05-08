@@ -1,0 +1,258 @@
+/* text */
+
+.text,
+.note {
+  color: var(--color-01);
+  font-family: gg sans bold, arial;
+  white-space: nowrap;
+  backface-visibility: hidden;
+  transition: color 0.2s, opacity 0.2s;
+  pointer-events: none;
+}
+
+/* inputs */
+
+.data {
+  position: relative;
+  display: grid;
+  overflow: hidden;
+}
+
+.data .text {
+  padding: 0 5px;
+  font-size: 18px;
+  opacity: 0.6;
+}
+
+.data .body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 5px;
+  background-color: var(--color-05);
+  transition: background-color 0.2s;
+}
+
+.data .body input {
+  all: unset;
+  position: absolute;
+  box-sizing: border-box;
+  padding: 0 20px;
+  width: 100%;
+  height: 100%;
+  color: var(--color-01);
+  font-family: gg sans bold, arial;
+  font-size: 18px;
+  text-overflow: ellipsis;
+}
+.data .body input,
+.data .body input::placeholder {
+  opacity: 0.8;
+  backface-visibility: hidden;
+  transition: color 0.2s, opacity 0.2s;
+}
+
+.data .body input:focus {
+  opacity: 1;
+}
+.data .body input:focus::placeholder {
+  opacity: 0;
+}
+
+.data .body input::-ms-reveal {
+  display: none;
+}
+
+/* icons */
+
+.icon {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 5px;
+  pointer-events: none;
+}
+
+.icon svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: none;
+  border-radius: 5px;
+  transition: fill 0.2s, stroke 0.2s, opacity 0.2s, transform 0.4s;
+  pointer-events: none;
+}
+
+/* buttons */
+
+.btn {
+  position: relative;
+  box-sizing: border-box;
+  border-radius: 5px;
+  transition: background-color 0.2s, opacity 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+
+/* notes */
+
+.btn .note {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-note);
+  opacity: 0;
+  filter: drop-shadow(0 0 5px rgba(0,0,0,0.6));
+  transition: background-color 0.2s, opacity 0.1s, transform 0.1s;
+}
+.btn .note:before {
+  z-index: 2;
+  content: attr(data-default);
+}
+.btn.active .note:before {
+  z-index: 2;
+  content: attr(data-active);
+}
+
+.btn .note.s-l {
+  padding: 0 15px;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 18px;
+}
+.btn .note.s-l:after {
+  content: '';
+  z-index: 1;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  background-color: var(--color-note);
+  transform: rotate(45deg) translateZ(-1px);
+  transition: background-color 0.2s;
+}
+
+.btn .note.s-l.p-r {
+  top: calc(50% - 20px);
+  left: calc(100% + 20px);
+  transform: translate(-10px, 0);
+}
+.btn .note.s-l.p-r:after {
+  left: -4px;
+}
+
+.btn .note.s-l.p-l {
+  top: calc(50% - 20px);
+  right: calc(100% + 20px);
+  transform: translate(10px, 0);
+}
+.btn .note.s-l.p-l:after {
+  right: -4px;
+}
+
+.btn .note.s-l.p-t {
+  bottom: calc(100% + 20px);
+  left: 50%;
+  transform: translate(-50%, -10px);
+}
+.btn .note.s-l.p-t:after {
+  bottom: -4px;
+  left: calc(50% - 10px);
+}
+
+.btn .note.s-l.p-b {
+  top: calc(100% + 20px);
+  left: 50%;
+  transform: translate(-50%, 10px);
+}
+.btn .note.s-l.p-b:after {
+  top: -4px;
+  left: calc(50% - 10px);
+}
+
+.btn:hover .note.s-l.p-r,
+.btn:hover .note.s-l.p-l {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.btn:hover .note.s-l.p-t,
+.btn:hover .note.s-l.p-b {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.btn .note.s-s {
+  padding: 0 10px;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.btn .note.s-s:after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  background-color: var(--color-05);
+  transform: rotate(45deg) translateZ(-1px);
+  transition: background-color 0.2s;
+}
+
+.btn .note.s-s.p-r {
+  top: calc(50% - 15px);
+  left: calc(100% + 10px);
+  transform: translate(-5px, 0);
+}
+.btn .note.s-s.p-r:after {
+  left: -5px;
+}
+
+.btn .note.s-s.p-l {
+  top: calc(50% - 15px);
+  right: calc(100% + 10px);
+  transform: translate(5px, 0);
+}
+.btn .note.s-s.p-l:after {
+  right: -5px;
+}
+
+.btn .note.s-s.p-t {
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translate(-50%, -5px);
+}
+.btn .note.s-s.p-t:after {
+  bottom: -5px;
+  left: calc(50% - 10px);
+}
+
+.btn .note.s-s.p-b {
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translate(-50%, 5px);
+}
+.btn .note.s-s.p-b:after {
+  top: -5px;
+  left: calc(50% - 10px);
+}
+
+.btn:hover .note.s-s {
+  transition: background-color 0.2s, opacity 0.1s 0.5s, transform 0.1s 0.5s;
+}
+
+.btn:hover .note.s-s.p-r,
+.btn:hover .note.s-s.p-l {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.btn:hover .note.s-s.p-t,
+.btn:hover .note.s-s.p-b {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
