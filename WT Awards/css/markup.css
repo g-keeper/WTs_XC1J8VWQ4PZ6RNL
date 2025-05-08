@@ -9,8 +9,15 @@
   width: 100%;
   height: 100%;
   opacity: 0;
-  transition: background-color 0.2s, opacity 0.2s linear;
+  transform: scale(1.1);
+  transition: background-color 0.2s, opacity 0.4s, transform 0.6s;
   pointer-events: none;
+}
+#auth.screen {
+  z-index: 998;
+}
+#load.screen {
+  z-index: 999;
 }
 
 .screen:before,
@@ -37,7 +44,7 @@
   width: 100%;
   height: 100%;
   background-color: var(--color-05);
-  transition: background-color 0.2s;
+  transition: background-color 0.4s;
   pointer-events: none;
 }
 
@@ -88,6 +95,7 @@
 
 .screen.active {
   opacity: 1;
+  transform: scale(1.0);
   pointer-events: all;
 }
 .screen.active .fade {
@@ -98,9 +106,9 @@
 
 #auth .content {
   display: grid;
-  grid-template-rows: 100px 190px 120px;
-  grid-row-gap: 30px;
-  width: 600px;
+  grid-template-rows: 100px 190px 110px;
+  grid-row-gap: 20px;
+  width: 500px;
   border-radius: 10px;
   background-color: var(--color-04);
   box-shadow: var(--sh-03);
@@ -160,7 +168,7 @@
 #auth .content .form {
   margin: 0 20px;
   grid-template-rows: repeat(2, 1fr);
-  grid-row-gap: 30px;
+  grid-row-gap: 20px;
 }
 
 #auth .content .form .data {
@@ -233,13 +241,6 @@
   content: 'Ошибка авторизации';
 }
 
-#auth .content .info .btn.ready {
-  background-color: var(--color-green-01);
-}
-#auth .content .info .btn.ready .text:before {
-  content: 'Авторизация завершена';
-}
-
 #auth .content .info .btn.loading {
   background-color: var(--color-03);
 }
@@ -263,10 +264,6 @@
   align-items: center;
   width: 400px;
   height: 400px;
-}
-#load .content .tech,
-#load .content .text {
-/*  filter: drop-shadow(0 0 10px rgba(0,0,0,0.8));*/
 }
 
 #load .content .tech {
@@ -311,7 +308,7 @@
   width: 100%;
   height: 100%;
   opacity: 0;
-  transition: opacity 0.2s linear;
+  transition: opacity 0.3s;
   pointer-events: none;
   user-select: none;
 }

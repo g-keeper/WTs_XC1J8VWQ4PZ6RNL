@@ -82,6 +82,7 @@ function toggle_load(mode) {
     });
   
     load_body.classList.add('active');
+    auth_body.classList.remove('active');
     main_content.classList.remove('active');
 
   } else {
@@ -147,8 +148,6 @@ function init_application({ username, password }) {
 
       custom_request(1).then(response => {
         if (response.status == 200) {
-          auth_complete.classList.remove('loading');
-          auth_complete.classList.add('ready');
           auth_local.password = response.password;
           localStorage.setItem('session', JSON.stringify(auth_local));
           navigator.credentials.create({
@@ -157,7 +156,7 @@ function init_application({ username, password }) {
               password: auth_password.value
             }
           });
-          setTimeout(() => location.reload(), 2000);
+          init_application(auth_local);
         } else {
           auth_complete.classList.remove('loading');
           auth_complete.classList.add('error');
